@@ -16,7 +16,8 @@ def load_garden():
             "last_commit_date": None,
             "plant_stage": 0,
             "wilting": False,
-            "total_commits": 0
+            "total_commits": 0,
+            "best_streak": 0  # NEW
         }
 
 def save_garden(data):
@@ -43,12 +44,15 @@ def update_streak(garden):
     garden["last_commit_date"] = today
     garden["total_commits"] = garden.get("total_commits", 0) + 1
     garden["plant_stage"] = min(garden["streak"], 5)
+    garden["best_streak"] = max(garden.get("best_streak", 0), garden["streak"])  # NEW
     return garden
 
 def draw_svg(garden):
     stage = garden["plant_stage"]
     wilting = garden["wilting"]
     streak = garden["streak"]
+    total_commits = garden.get("total_commits", 0)   # NEW
+    best_streak = garden.get("best_streak", 0)        # NEW
 
     leaf_color = "#4caf50" if not wilting else "#a0522d"
     stem_color = "#388e3c" if not wilting else "#8b6914"
@@ -70,21 +74,22 @@ def draw_svg(garden):
     if stage >= 5:
         leaves += f'<circle cx="100" cy="{stem_y_end - 12}" r="14" fill="#e91e63"><animate attributeName="r" values="14;17;14" dur="2s" repeatCount="indefinite" /></circle>'
 
-    wilt_note = '<text x="100" y="210" text-anchor="middle" font-size="11" fill="#a0522d">💧 Missed a day — keep going!</text>' if wilting else ""
+    wilt_note = '<text x="100" y="232" text-anchor="middle" font-size="11" fill="#a0522d">Missed a day — keep going!</text>' if wilting else ""
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="200" height="220">
-  <rect width="200" height="220" fill="{bg_color}" rx="12" />
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="200" height="245">
+  <rect width="200" height="245" fill="{bg_color}" rx="12" />
   <rect x="80" y="{stem_y_end}" width="8" height="{stem_height}" fill="{stem_color}" />
   <rect x="60" y="178" width="58" height="10" rx="4" fill="#795548" />
   {leaves}
   <text x="100" y="200" text-anchor="middle" font-size="12" fill="#555">🔥 {streak} day streak</text>
+  <text x="100" y="216" text-anchor="middle" font-size="10" fill="#888">{total_commits} total commits</text>
+  <text x="100" y="230" text-anchor="middle" font-size="10" fill="#aaa">best: {best_streak} days</text>
   {wilt_note}
-</svg>"""
+</svg>"""  # NEW — added total commits + best streak lines, height increased to 245
 
     with open(SVG_FILE, "w", encoding="utf-8") as f:
         f.write(svg)
 
-        
 def stage_commit():
     subprocess.run(["git", "-C", REPO, "add", GARDEN_FILE, SVG_FILE], check=True)
     result = subprocess.run(
