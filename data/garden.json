@@ -3,5 +3,6 @@
   "last_commit_date": "2026-06-30",
   "plant_stage": 1,
   "wilting": false,
-  "total_commits": 1
+  "total_commits": 1,
+  "best_streak": 1
 }
