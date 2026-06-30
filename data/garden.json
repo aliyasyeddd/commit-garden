@@ -4,5 +4,6 @@
   "plant_stage": 1,
   "wilting": false,
   "total_commits": 1,
-  "best_streak": 1
+  "best_streak": 1,
+  "daily_commits": 1
 }
