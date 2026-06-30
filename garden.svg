@@ -1,10 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="245">
-  <rect width="200" height="245" fill="#f0fff0" rx="12" />
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="250">
+  <rect width="200" height="250" fill="#f0fff0" rx="12" />
+  
   <rect x="80" y="140" width="8" height="40" fill="#388e3c" />
   <rect x="60" y="178" width="58" height="10" rx="4" fill="#795548" />
   <ellipse cx="100" cy="160" rx="18" ry="10" fill="#4caf50" transform="rotate(-30 100 160)" />
-  <text x="100" y="200" text-anchor="middle" font-size="12" fill="#555">🔥 1 day streak</text>
-  <text x="100" y="216" text-anchor="middle" font-size="10" fill="#888">1 total commits</text>
-  <text x="100" y="230" text-anchor="middle" font-size="10" fill="#aaa">best: 0 days</text>
+  <text x="100" y="200" text-anchor="middle" font-size="11" fill="#555">🌱 Sprout — 1 day streak</text>
+  <text x="100" y="215" text-anchor="middle" font-size="10" fill="#888">1 total commits</text>
+  <text x="100" y="229" text-anchor="middle" font-size="10" fill="#aaa">best: 0 days</text>
   
 </svg>
