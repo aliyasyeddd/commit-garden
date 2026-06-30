@@ -2,8 +2,9 @@ import json
 import subprocess
 from datetime import date, timedelta
 
-GARDEN_FILE = "garden.json"
-SVG_FILE = "garden.svg"
+REPO = r"D:\Full Stack\commit-garden"
+GARDEN_FILE = r"D:\Full Stack\commit-garden\garden.json"
+SVG_FILE = r"D:\Full Stack\commit-garden\garden.svg"
 
 def load_garden():
     try:
@@ -83,11 +84,12 @@ def draw_svg(garden):
     with open(SVG_FILE, "w", encoding="utf-8") as f:
         f.write(svg)
 
+        
 def stage_commit():
-    subprocess.run(["git", "add", GARDEN_FILE, SVG_FILE], check=True)
-    subprocess.run(
-        ["git", "commit", "--no-verify", "-m", "🌱 garden updated"],
-        check=True
+    subprocess.run(["git", "-C", REPO, "add", GARDEN_FILE, SVG_FILE], check=True)
+    result = subprocess.run(
+        ["git", "-C", REPO, "commit", "--no-verify", "-m", "garden updated"],
+        capture_output=True
     )
 
 def main():
