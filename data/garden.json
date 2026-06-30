@@ -1,9 +1,9 @@
 {
-  "streak": 1,
-  "last_commit_date": "2026-06-30",
-  "plant_stage": 1,
+  "streak": 2,
+  "last_commit_date": "2026-07-01",
+  "plant_stage": 2,
   "wilting": false,
-  "total_commits": 1,
-  "best_streak": 1,
-  "daily_commits": 3
+  "total_commits": 2,
+  "best_streak": 2,
+  "daily_commits": 1
 }
