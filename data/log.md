@@ -1,3 +1,3 @@
 
 ## 2026-06-30
-git hooks
+Built a flask server
