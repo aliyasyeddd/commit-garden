@@ -14,7 +14,4 @@ Built a watering animation and daily commit bonus badge
 learned about powershell extension
 
 ## 2026-07-01
-comitted
-
-## 2026-07-01
-comitted
+checking commits
