@@ -15,3 +15,6 @@ learned about powershell extension
 
 ## 2026-07-02
 Learn about Werkzeug
+
+## 2026-07-02
+Werkzeug is a Python library that provides the core tools for building web applications. Flask is actually built on top of Werkzeug.
