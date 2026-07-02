@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="170" viewBox="0 0 200 170">
   <rect x="0" y="0" width="200" height="170" fill="transparent" />
   
-  <rect x="80" y="100" width="8" height="60" fill="#388e3c" />
+  <rect x="80" y="80" width="8" height="80" fill="#388e3c" />
   <rect x="60" y="158" width="58" height="10" rx="4" fill="#795548" />
-  <ellipse cx="100" cy="120" rx="18" ry="10" fill="#4caf50" transform="rotate(-30 100 120)" /><ellipse cx="100" cy="110" rx="18" ry="10" fill="#4caf50" transform="rotate(30 100 110)" />
+  <ellipse cx="100" cy="100" rx="18" ry="10" fill="#4caf50" transform="rotate(-30 100 100)" /><ellipse cx="100" cy="90" rx="18" ry="10" fill="#4caf50" transform="rotate(30 100 90)" /><ellipse cx="100" cy="80" rx="20" ry="12" fill="#4caf50" />
 </svg>
