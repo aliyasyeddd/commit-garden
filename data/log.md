@@ -13,17 +13,5 @@ Built a watering animation and daily commit bonus badge
 ## 2026-07-01
 learned about powershell extension
 
-## 2026-07-01
-checking commits
-
-## 2026-07-01
-commit
-
-## 2026-07-01
-flask
-
-## 2026-07-01
-flasskk
-
-## 2026-07-01
-check
+## 2026-07-02
+Learn about Werkzeug
