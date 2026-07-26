@@ -57,7 +57,7 @@ _LEAF_PATH = (
 
 # pot shape lifted directly from the plant artifact (100x100 viewBox), scaled 2x
 # to fit this script's 200x220 canvas
-_POT_RIM = '<ellipse cx="100" cy="176" rx="32" ry="12" fill="{fill}"/>'
+_POT_RIM = '<ellipse cx="100" cy="176" rx="22" ry="10" fill="{fill}"/>'
 _POT_BODY = '<path d="M72 136 L128 136 L120 176 L80 176 Z" fill="{fill}"/>'
 
 def _pot_svg(fill):
@@ -128,7 +128,7 @@ def draw_svg(garden):
         pot_fill = "#8b6914"
 
     stem_height = 20 + (stage * 20)
-    stem_y_start = 176  # top of the pot rim
+    stem_y_start = 136  # top of the pot rim (where the pot trapezoid's top edge sits)
     stem_y_end = stem_y_start - stem_height
 
     growth = ""
@@ -154,7 +154,7 @@ def draw_svg(garden):
         '</text>'
     ) if wilting else ""
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="200" height="220">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="200" height="220" viewBox="0 0 200 220">
                 {_pot_svg(pot_fill)}
                 <rect x="96" y="{stem_y_end}" width="8" height="{stem_height}" fill="{stem_color}" />
                 {growth}
