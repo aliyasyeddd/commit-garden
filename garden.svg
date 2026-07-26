@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="220" viewBox="0 0 200 220">
-                <ellipse cx="100" cy="176" rx="32" ry="12" fill="#a9673f"/><path d="M72 136 L128 136 L120 176 L80 176 Z" fill="#a9673f"/>
+                <ellipse cx="100" cy="176" rx="22" ry="10" fill="#a9673f"/><path d="M72 136 L128 136 L120 176 L80 176 Z" fill="#a9673f"/>
                 <rect x="96" y="96" width="8" height="40" fill="#4a8f3c" />
                 <g transform="translate(100,122.0) rotate(-200) scale(0.9)"><path d="M0 0 L2 -4 L4 -2 L6 -6 L9 -4 L12 -7 L15 -5 L18 -6 L21 -3 L24 -4 L26 0 L24 4 L21 3 L18 6 L15 5 L12 7 L9 4 L6 6 L4 2 L2 4 Z" fill="#6bbf4f" stroke="#3a7a2a" stroke-width="1"/></g>
                 <text x="100" y="200" text-anchor="middle" font-size="12" fill="#555">🔥 1 day streak</text>
