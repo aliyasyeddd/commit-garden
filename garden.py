@@ -127,17 +127,21 @@ def draw_svg(garden):
         center_stroke = "#5c3a1a"
         pot_fill = "#8b6914"
 
-    stem_height = 20 + (stage * 20)
+    # stem length per stage, matching the reference growth artwork exactly
+    # (scaled 2x from the 100-unit reference: stage1=12, stage2=26, stage3=42, stage4=48, stage5=46)
+    _STAGE_STEM_HEIGHT = {1: 24, 2: 52, 3: 84, 4: 96, 5: 92}
+    stem_height = _STAGE_STEM_HEIGHT.get(stage, 92 if stage > 5 else 24)
     stem_y_start = 136  # top of the pot rim (where the pot trapezoid's top edge sits)
     stem_y_end = stem_y_start - stem_height
 
     growth = ""
 
-    # stages 1-2: leaves appear one at a time
-    if stage >= 1:
-        growth += _leaf_svg(100, stem_y_start - stem_height * 0.35, -200, 0.9, leaf_fill, leaf_stroke)
+    # stage 1: bare stem only (no leaves yet, matching the reference)
+    # stage 2: first leaf; stage 3: second leaf
     if stage >= 2:
-        growth += _leaf_svg(100, stem_y_start - stem_height * 0.6, -20, 1.0, leaf_fill, leaf_stroke)
+        growth += _leaf_svg(100, 104, -200, 0.9, leaf_fill, leaf_stroke)
+    if stage >= 3:
+        growth += _leaf_svg(100, 76, -20, 1.0, leaf_fill, leaf_stroke)
 
     # stage 3: stem keeps growing taller, leaves stay as-is (no new leaf)
     # stage 4: closed bud at the top
