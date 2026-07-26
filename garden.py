@@ -55,10 +55,29 @@ _LEAF_PATH = (
     "L24 4 L21 3 L18 6 L15 5 L12 7 L9 4 L6 6 L4 2 L2 4 Z"
 )
 
+# pot shape lifted directly from the plant artifact (100x100 viewBox), scaled 2x
+# to fit this script's 200x220 canvas
+_POT_RIM = '<ellipse cx="100" cy="176" rx="32" ry="12" fill="{fill}"/>'
+_POT_BODY = '<path d="M72 136 L128 136 L120 176 L80 176 Z" fill="{fill}"/>'
+
+def _pot_svg(fill):
+    return _POT_RIM.format(fill=fill) + _POT_BODY.format(fill=fill)
+
 def _leaf_svg(x, y, angle, scale, fill, stroke):
     return (
         f'<g transform="translate({x},{y}) rotate({angle}) scale({scale})">'
         f'<path d="{_LEAF_PATH}" fill="{fill}" stroke="{stroke}" stroke-width="1"/>'
+        f'</g>'
+    )
+
+def _bud_svg(x, y, sepal_fill, sepal_stroke, tip_fill, tip_stroke):
+    # closed bud: rounded green sepal shape with a yellow tip peeking through the top
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<path d="M-4 0 C-4 -6,4 -6,4 0 C4 3,-4 3,-4 0 Z" '
+        f'fill="{sepal_fill}" stroke="{sepal_stroke}" stroke-width="1"/>'
+        f'<path d="M-2 -5 L0 -8 L2 -5 Z" '
+        f'fill="{tip_fill}" stroke="{tip_stroke}" stroke-width="0.6"/>'
         f'</g>'
     )
 
@@ -97,6 +116,7 @@ def draw_svg(garden):
         petal_stroke = "#c98a02"
         center_fill = "#e67e22"
         center_stroke = "#a85d12"
+        pot_fill = "#a9673f"
     else:
         stem_color = "#8b6914"
         leaf_fill = "#a0522d"
@@ -105,21 +125,25 @@ def draw_svg(garden):
         petal_stroke = "#8b6914"
         center_fill = "#8b5a2b"
         center_stroke = "#5c3a1a"
+        pot_fill = "#8b6914"
 
     stem_height = 20 + (stage * 20)
-    stem_y_start = 180
+    stem_y_start = 176  # top of the pot rim
     stem_y_end = stem_y_start - stem_height
 
     growth = ""
 
+    # stages 1-2: leaves appear one at a time
     if stage >= 1:
         growth += _leaf_svg(100, stem_y_start - stem_height * 0.35, -200, 0.9, leaf_fill, leaf_stroke)
     if stage >= 2:
         growth += _leaf_svg(100, stem_y_start - stem_height * 0.6, -20, 1.0, leaf_fill, leaf_stroke)
-    if stage >= 3:
-        growth += _leaf_svg(100, stem_y_start - stem_height * 0.85, -165, 0.75, leaf_fill, leaf_stroke)
+
+    # stage 3: stem keeps growing taller, leaves stay as-is (no new leaf)
+    # stage 4: closed bud at the top
+    # stage 5+: bud opens into the full bloom, center pulses
     if stage == 4:
-        growth += _bloom_svg(100, stem_y_end, petal_fill, petal_stroke, center_fill, center_stroke, pulse=False)
+        growth += _bud_svg(100, stem_y_end, leaf_fill, leaf_stroke, petal_fill, petal_stroke)
     elif stage >= 5:
         growth += _bloom_svg(100, stem_y_end, petal_fill, petal_stroke, center_fill, center_stroke, pulse=True)
 
@@ -131,8 +155,8 @@ def draw_svg(garden):
     ) if wilting else ""
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="200" height="220">
-                <rect x="80" y="{stem_y_end}" width="8" height="{stem_height}" fill="{stem_color}" />
-                <rect x="60" y="178" width="58" height="10" rx="4" fill="#795548" />
+                {_pot_svg(pot_fill)}
+                <rect x="96" y="{stem_y_end}" width="8" height="{stem_height}" fill="{stem_color}" />
                 {growth}
                 <text x="100" y="200" text-anchor="middle" font-size="12" fill="#555">🔥 {streak} day streak</text>
                 {wilt_note}
