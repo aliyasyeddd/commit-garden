@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="220" viewBox="0 0 200 220">
-                <ellipse cx="100" cy="176" rx="22" ry="10" fill="#a9673f"/><path d="M72 136 L128 136 L120 176 L80 176 Z" fill="#a9673f"/>
-                <rect x="96" y="112" width="8" height="24" fill="#4a8f3c" />
-                
-                <text x="100" y="200" text-anchor="middle" font-size="12" fill="#555">🔥 1 day streak</text>
+                <g transform="scale(2)"><ellipse cx="50" cy="88" rx="11" ry="5" fill="#a9673f"/><path d="M36 68 L64 68 L60 88 L40 88 Z" fill="#a9673f"/><path d="M50 68 C 49 55, 51 45, 50 42" stroke="#4a8f3c" stroke-width="2.5" fill="none"/><g transform="translate(50,52) rotate(205) scale(0.9)"><path d="M0 0 L2 -4 L4 -2 L6 -6 L9 -4 L12 -7 L15 -5 L18 -6 L21 -3 L24 -4 L26 0 L24 4 L21 3 L18 6 L15 5 L12 7 L9 4 L6 6 L4 2 L2 4 Z" fill="#6bbf4f" stroke="#3a7a2a" stroke-width="1"/><path d="M0 0 L25 0" stroke="#3a7a2a" stroke-width="0.5" fill="none"/><path d="M6 -1 L9 -4" stroke="#3a7a2a" stroke-width="0.5" fill="none"/><path d="M6 1 L9 4" stroke="#3a7a2a" stroke-width="0.5" fill="none"/><path d="M14 -1 L16 -5.5" stroke="#3a7a2a" stroke-width="0.5" fill="none"/><path d="M14 1 L16 5.5" stroke="#3a7a2a" stroke-width="0.5" fill="none"/></g></g>
+                <text x="100" y="200" text-anchor="middle" font-size="12" fill="#555">🔥 2 day streak</text>
                 
               </svg>
