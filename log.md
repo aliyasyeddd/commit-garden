@@ -15,3 +15,7 @@ react fundamentals
 ## 2026-07-30
 learn about .gitignore
 
+
+## 2026-07-31
+user modals for skill decay tracker project
+
