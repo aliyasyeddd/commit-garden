@@ -19,3 +19,7 @@ learn about .gitignore
 ## 2026-07-31
 user modals for skill decay tracker project
 
+
+## 2026-08-02
+user auth route
+
