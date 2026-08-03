@@ -23,3 +23,7 @@ user modals for skill decay tracker project
 ## 2026-08-02
 user auth route
 
+
+## 2026-08-03
+updating plant
+
