@@ -27,3 +27,7 @@ user auth route
 ## 2026-08-03
 updating plant
 
+
+## 2026-08-04
+svg plants
+
