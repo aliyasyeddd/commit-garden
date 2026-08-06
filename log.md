@@ -35,3 +35,7 @@ svg plants
 ## 2026-08-05
 login route
 
+
+## 2026-08-06
+validators
+
