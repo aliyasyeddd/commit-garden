@@ -51,3 +51,7 @@ reactfundamentals
 ## 2026-08-11
 login page
 
+
+## 2026-08-12
+signup page 
+
