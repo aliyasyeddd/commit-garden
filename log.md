@@ -59,3 +59,7 @@ signup page
 ## 2026-08-13
 landing page of skill decay tracker
 
+
+## 2026-08-14
+routing andpaths
+
