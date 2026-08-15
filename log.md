@@ -63,3 +63,7 @@ landing page of skill decay tracker
 ## 2026-08-14
 routing andpaths
 
+
+## 2026-08-15
+ui/ux design fundamentals
+
