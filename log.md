@@ -67,3 +67,7 @@ routing andpaths
 ## 2026-08-15
 ui/ux design fundamentals
 
+
+## 2026-08-16
+dashboard
+
