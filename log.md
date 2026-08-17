@@ -71,3 +71,7 @@ ui/ux design fundamentals
 ## 2026-08-16
 dashboard
 
+
+## 2026-08-17
+signup page
+
