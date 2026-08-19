@@ -79,3 +79,7 @@ signup page
 ## 2026-08-18
 web hooks
 
+
+## 2026-08-19
+log pratice
+
