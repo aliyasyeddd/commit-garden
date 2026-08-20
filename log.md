@@ -83,3 +83,7 @@ web hooks
 ## 2026-08-19
 log pratice
 
+
+## 2026-08-20
+dashoard
+
